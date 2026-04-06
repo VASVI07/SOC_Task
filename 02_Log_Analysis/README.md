@@ -25,7 +25,9 @@ Identify whether activity is normal or suspicious.
 ### Logs Observed
 
 User: admin | IP: 192.168.1.10 | Status: Failed Login
+
 User: admin | IP: 192.168.1.10 | Status: Failed Login
+
 User: admin | IP: 192.168.1.10 | Status: Success
 
 ### Analysis
