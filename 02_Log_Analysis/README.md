@@ -37,5 +37,8 @@ User: admin | IP: 192.168.1.10 | Status: Success
 * Successful login after failures
 
 ### Conclusion
+This may indicate a brute force attack attempt.
+Further investigation is recommended to confirm malicious activity.
+
 
 This may indicate a brute force attack attempt.
