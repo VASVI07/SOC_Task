@@ -1,4 +1,4 @@
-# SOC Analysis Project 🔍
+# SOC Analysis Project 
 
 ## Overview
 
