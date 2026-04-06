@@ -16,3 +16,12 @@ The IP appears to be from an internal network.
 The activity may be from a local user rather than an external attacker.
 Further investigation is needed.
 
+## Practical Evidence
+
+### VirusTotal Analysis
+
+![VirusTotal Screenshot](../08_Screenshots/virustotal_8.8.8.8.png)
+
+* IP checked: 8.8.8.8
+* Result: Clean (0 detections)
+* Conclusion: No malicious activity detected for this IP.
