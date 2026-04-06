@@ -20,7 +20,6 @@ Further investigation is needed.
 
 ### VirusTotal Analysis
 
-![VirusTotal Screenshot](../08_Screenshots/virustotal_8.8.8.8.png)
 
 * IP checked: 8.8.8.8
 * Result: Clean (0 detections)
