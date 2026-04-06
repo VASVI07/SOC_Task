@@ -42,3 +42,18 @@ Further investigation is recommended to confirm malicious activity.
 
 
 This may indicate a brute force attack attempt.
+
+## Command Line Analysis
+
+
+### Command Used
+
+findstr "Failed" sample_logs.txt
+
+### Result
+
+Filtered failed login attempts from log file.
+
+### Conclusion
+
+Multiple failed login attempts detected, indicating possible suspicious activity.
