@@ -39,3 +39,6 @@ Medium risk due to suspicious login behavior.
 ## Conclusion
 
 The activity is suspicious but not confirmed as an attack. Further monitoring is required.
+## Executive Summary
+
+This report presents the analysis of a suspicious login activity detected through log monitoring. Multiple failed login attempts followed by a successful login were observed. Threat intelligence analysis indicated the IP was not malicious. The activity was classified as suspicious and escalated for further investigation.
