@@ -1,35 +1,41 @@
-# Capstone Project - SOC Analysis Report
+# Capstone Project - SOC Investigation Report
 
-## Summary
+## Incident Summary
 
-A suspicious login pattern was identified involving multiple failed login attempts followed by a successful login.
+A suspicious login pattern was detected involving multiple failed login attempts followed by a successful login.
 
-## Log Analysis
+## Investigation Steps
 
-* Detected repeated failed login attempts
-* Same IP address used
+1. Analyzed login logs
+2. Identified repeated failed attempts
+3. Checked IP address (192.168.1.10)
+4. Determined IP is private (internal network)
+5. Performed alert triage
+6. Escalated incident
+
+## Findings
+
+* Multiple failed login attempts observed
+* Same IP used repeatedly
 * Successful login after failures
+* Activity originated from internal network
 
-## Threat Intelligence
+## Risk Assessment
 
-* IP address (192.168.1.10) is a private IP
-* Indicates internal network activity
+Medium risk due to suspicious login behavior.
 
-## Triage Decision
+## Actions Taken
 
-* Classified as suspicious activity
+* Documented logs and findings
+* Escalated to senior team
+* Recommended monitoring
 
-## Escalation
+## Recommendations
 
-* Escalated to senior team due to unusual login behavior
-
-## Evidence Collected
-
-* Login logs
-* IP information
-* Analysis documentation
+* Implement account lockout policy
+* Monitor login attempts
+* Review user activity logs
 
 ## Conclusion
 
-The activity may indicate a potential brute force attempt from within the network. Further investigation is recommended.
-
+The activity is suspicious but not confirmed as an attack. Further monitoring is required.
