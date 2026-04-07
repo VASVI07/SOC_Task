@@ -86,3 +86,14 @@ Repeated failed login attempts could indicate:
 - Possible brute-force behavior if repeated frequently
 
 This kind of activity should be monitored in a SOC environment.
+
+## Splunk Analysis
+
+Logs were ingested into Splunk and analyzed using search queries.
+
+Query Used:
+index=* EventCode=4625
+
+Observation:
+Multiple failed login attempts were detected in Splunk, confirming earlier analysis.
+
