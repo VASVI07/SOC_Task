@@ -54,6 +54,12 @@ Such IPs should be monitored or blocked in a real SOC environment.
 This IP is safe and represents normal network activity.
 
 ---
+## IOC Summary
+
+| Indicator | Type | Tool Used | Result |
+|----------|------|----------|--------|
+| 185.220.101.1 | IP Address | VirusTotal | 14/94 flagged |
+| 185.220.101.1 | IP Address | AbuseIPDB | 100% abuse |
 
 ## Screenshot Evidence
 
