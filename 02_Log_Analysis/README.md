@@ -32,7 +32,8 @@ User: admin | IP: 192.168.1.10 | Status: Success
 
 ### Analysis
 
-* Multiple failed login attempts detected
+* Multiple failed<img width="1115" height="1321" alt="Screenshot 2026-04-07 204755" src="https://github.com/user-attachments/assets/924ac16b-5b51-4d4f-8730-2508a179b3f1" />
+ login attempts detected
 * Same IP address used repeatedly
 * Successful login after failures
 
@@ -57,3 +58,30 @@ Filtered failed login attempts from log file.
 ### Conclusion
 
 Multiple failed login attempts detected, indicating possible suspicious activity.
+
+## Real Log Analysis (Practical Work)
+
+### What I did
+I generated failed login attempts on my system and analyzed real Windows security logs.
+
+### Steps followed
+- Opened Event Viewer → Windows Logs → Security
+- Filtered logs using Event ID 4625 (failed login attempts)
+- Exported logs to a file (real_logs.txt)
+- Used command line tool (findstr) to filter relevant entries
+
+### Command used
+findstr "4625" real_logs.txt
+
+### What I observed
+- Multiple failed login attempts were recorded
+- Event ID 4625 indicates failed login activity
+- Logs include timestamp, logon type, and system details
+
+### My understanding
+Repeated failed login attempts could indicate:
+- Incorrect password attempts
+- Unauthorized access attempts
+- Possible brute-force behavior if repeated frequently
+
+This kind of activity should be monitored in a SOC environment.
