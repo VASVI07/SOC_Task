@@ -1,79 +1,102 @@
-# Capstone Project – SOC Investigation
-
-## Objective
-
-The objective of this project is to simulate a real-world Security Operations Center (SOC) investigation by analyzing suspicious login activity, validating threats using external intelligence sources, and documenting the findings.
-
----
+# Capstone Project — Security Incident Investigation
 
 ## Scenario
 
-During routine monitoring, multiple failed login attempts were detected on a Windows system. The frequency and pattern of these attempts suggested potential unauthorized access or brute force activity.
+During routine log monitoring, multiple failed login attempts were detected in the Windows Security logs (Event ID 4625). These attempts occurred within a very short time frame, indicating abnormal behavior.
 
 ---
 
 ## Step 1: Log Analysis
 
-Windows Security Event Logs were analyzed, focusing on Event ID **4625**, which represents failed login attempts.
+The system logs were analyzed using exported Windows Security logs.
 
-### Observations
+Findings:
+- Multiple failed login attempts observed
+- Events occurred within seconds
+- Event ID: 4625 (Failed Login)
 
-- Multiple failed login attempts were recorded
-- Attempts occurred within a short time frame
-- Repeated login failures indicate abnormal behavior
-- Pattern suggests possible brute force attempt
-
----
-
-## Step 2: Command Line Investigation
-
-To filter relevant events, the following command was used:
-
-
-### Result
-
-The command extracted all failed login entries from the exported log file, allowing focused analysis of suspicious activity.
+This pattern suggested possible brute force activity.
 
 ---
 
-## Step 3: Threat Intelligence Analysis
+## Step 2: Log Correlation
 
-The suspicious IP address identified from logs was analyzed using external threat intelligence platforms.
+The failed login events were correlated based on timestamps.
 
-### Tools Used
-
-- VirusTotal  
-- AbuseIPDB  
-
-### Findings
-
-- VirusTotal reported **14 out of 94 security vendors flagged the IP as malicious**
-- AbuseIPDB showed **100% abuse confidence score**
-- The IP was identified as a **TOR exit node**, often associated with anonymized and potentially malicious activity
+Observation:
+- Repeated login failures occurred within seconds
+- Activity pattern indicates automated attempts rather than manual login
 
 ---
 
-## Step 4: Analysis
+## Step 3: Anomaly Detection
 
-- Continuous failed login attempts indicate an attempt to gain unauthorized access
-- The use of a flagged IP address strengthens suspicion
-- Threat intelligence confirms the IP has a malicious reputation
-- The activity is not consistent with normal user behavior
+The behavior was identified as anomalous due to:
+- High frequency of login failures
+- Short time interval between attempts
 
----
-
-## Step 5: Conclusion
-
-Based on log analysis and threat intelligence findings, the activity is highly suspicious and likely represents a brute force attack attempt originating from a malicious source.
+This is not typical for normal user activity.
 
 ---
 
-## Step 6: Actions Taken
+## Step 4: Threat Intelligence
 
-- Suspicious activity was documented  
-- Alert was triaged and categorized as Medium severity  
-- Evidence (log files) was preserved for further investigation  
-- Recommendation made to monitor activity and block the IP if necessary  
+The associated IP address was analyzed using external threat intelligence tools:
+
+Tools Used:
+- VirusTotal
+- AbuseIPDB
+
+Findings:
+- IP flagged as malicious by multiple vendors
+- High abuse confidence score
+- Identified as suspicious (possible Tor exit node)
 
 ---
 
+## Step 5: Alert Triage
+
+Severity: Medium
+
+Reason:
+- Suspicious login attempts detected
+- No confirmed successful unauthorized access
+
+Decision:
+- Monitor activity closely
+- No immediate escalation required at this stage
+
+---
+
+## Step 6: Incident Escalation
+
+Criteria for escalation:
+- If login attempts continue
+- If a successful login is observed
+- If multiple systems are targeted
+
+Current Status:
+- Escalation not required yet
+- Kept under monitoring
+
+---
+
+## Step 7: Evidence Preservation
+
+The following evidence was collected and preserved:
+- Exported Windows Security logs
+- Command line analysis outputs
+- Screenshots of log activity
+- Threat intelligence results
+
+All evidence was stored securely for future investigation.
+
+---
+
+## Final Conclusion
+
+The investigation identified multiple failed login attempts consistent with brute force behavior. Threat intelligence confirmed the associated IP as potentially malicious.
+
+Although no successful compromise was observed, the activity is suspicious and requires continued monitoring.
+
+---
