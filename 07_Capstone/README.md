@@ -1,44 +1,79 @@
-# Capstone Project - SOC Investigation Report
+# Capstone Project – SOC Investigation
 
-## Incident Summary
+## Objective
 
-A suspicious login pattern was detected involving multiple failed login attempts followed by a successful login.
+The objective of this project is to simulate a real-world Security Operations Center (SOC) investigation by analyzing suspicious login activity, validating threats using external intelligence sources, and documenting the findings.
 
-## Investigation Steps
+---
 
-1. Analyzed login logs
-2. Identified repeated failed attempts
-3. Checked IP address (192.168.1.10)
-4. Determined IP is private (internal network)
-5. Performed alert triage
-6. Escalated incident
+## Scenario
 
-## Findings
+During routine monitoring, multiple failed login attempts were detected on a Windows system. The frequency and pattern of these attempts suggested potential unauthorized access or brute force activity.
 
-* Multiple failed login attempts observed
-* Same IP used repeatedly
-* Successful login after failures
-* Activity originated from internal network
+---
 
-## Risk Assessment
+## Step 1: Log Analysis
 
-Medium risk due to suspicious login behavior.
+Windows Security Event Logs were analyzed, focusing on Event ID **4625**, which represents failed login attempts.
 
-## Actions Taken
+### Observations
 
-* Documented logs and findings
-* Escalated to senior team
-* Recommended monitoring
+- Multiple failed login attempts were recorded
+- Attempts occurred within a short time frame
+- Repeated login failures indicate abnormal behavior
+- Pattern suggests possible brute force attempt
 
-## Recommendations
+---
 
-* Implement account lockout policy
-* Monitor login attempts
-* Review user activity logs
+## Step 2: Command Line Investigation
 
-## Conclusion
+To filter relevant events, the following command was used:
 
-The activity is suspicious but not confirmed as an attack. Further monitoring is required.
-## Executive Summary
 
-This report presents the analysis of a suspicious login activity detected through log monitoring. Multiple failed login attempts followed by a successful login were observed. Threat intelligence analysis indicated the IP was not malicious. The activity was classified as suspicious and escalated for further investigation.
+### Result
+
+The command extracted all failed login entries from the exported log file, allowing focused analysis of suspicious activity.
+
+---
+
+## Step 3: Threat Intelligence Analysis
+
+The suspicious IP address identified from logs was analyzed using external threat intelligence platforms.
+
+### Tools Used
+
+- VirusTotal  
+- AbuseIPDB  
+
+### Findings
+
+- VirusTotal reported **14 out of 94 security vendors flagged the IP as malicious**
+- AbuseIPDB showed **100% abuse confidence score**
+- The IP was identified as a **TOR exit node**, often associated with anonymized and potentially malicious activity
+
+---
+
+## Step 4: Analysis
+
+- Continuous failed login attempts indicate an attempt to gain unauthorized access
+- The use of a flagged IP address strengthens suspicion
+- Threat intelligence confirms the IP has a malicious reputation
+- The activity is not consistent with normal user behavior
+
+---
+
+## Step 5: Conclusion
+
+Based on log analysis and threat intelligence findings, the activity is highly suspicious and likely represents a brute force attack attempt originating from a malicious source.
+
+---
+
+## Step 6: Actions Taken
+
+- Suspicious activity was documented  
+- Alert was triaged and categorized as Medium severity  
+- Evidence (log files) was preserved for further investigation  
+- Recommendation made to monitor activity and block the IP if necessary  
+
+---
+
