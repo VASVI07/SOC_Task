@@ -1,33 +1,66 @@
-## IP Analysis
+# Threat Intelligence
 
-### IP Observed
+## Objective
 
-192.168.1.10
+To investigate IP addresses and determine whether they are malicious or safe using threat intelligence tools.
+
+---
+
+## Tools Used
+
+- VirusTotal  
+- AbuseIPDB  
+
+---
+
+## Investigation 1: Suspicious IP
+
+### IP Address
+185.220.101.1  
 
 ### Analysis
 
-* This is a private IP address
-* Private IPs are used within local networks
-* It is not directly traceable on the internet
+- Checked the IP on VirusTotal  
+- Multiple security vendors flagged the IP as suspicious  
+- Associated with malicious or anonymized traffic  
+
+- Checked on AbuseIPDB  
+- Reports indicate abusive or suspicious behavior  
+- High confidence of abuse  
 
 ### Conclusion
 
-The IP appears to be from an internal network.
-The activity may be from a local user rather than an external attacker.
-Further investigation is needed.
+This IP is potentially malicious and may be linked to suspicious network activity.  
+Such IPs should be monitored or blocked in a real SOC environment.
 
-## Practical Evidence
+---
 
-### VirusTotal Analysis
+## Investigation 2: Clean IP
+
+### IP Address
+8.8.8.8  
+
+### Analysis
+
+- Checked the IP on VirusTotal  
+- No malicious detections  
+
+- Checked on AbuseIPDB  
+- IP belongs to Google Public DNS  
+- Trusted and widely used  
+
+### Conclusion
+
+This IP is safe and represents normal network activity.
+
+---
+
+## Screenshot Evidence
+
+### VirusTotal Result
 
 
-* IP checked: 8.8.8.8
-* Result: Clean (0 detections)
-* Conclusion: No malicious activity detected for this IP.
 
-### AbuseIPDB Analysis
+### AbuseIPDB Result
 
-
-* IP checked: 8.8.8.8
-* Abuse Score: Low / Safe
-* Conclusion: No significant abuse reports found for this IP.
+![AbuseIPDB](../08_Screenshots/threat_abuse.png)
