@@ -1,54 +1,39 @@
-# Final SOC Investigation Report
+# Final SOC Report
 
-## Executive Summary
+## Summary
 
-A suspicious login activity was detected involving multiple failed login attempts followed by a successful login. The activity was analyzed using log analysis and threat intelligence tools. The IP was found to be internal and not malicious. The activity was classified as suspicious and escalated for further monitoring.
+This project involved analyzing suspicious login activity using real Windows logs.
 
-## Incident Description
+---
 
-Logs showed repeated failed login attempts for a user account from the same IP address, followed by a successful login.
+## Investigation Steps
 
-## Log Analysis
+- Log analysis performed using Event Viewer  
+- Failed login attempts identified (Event ID 4625)  
+- Logs correlated based on timestamps  
+- Anomalies detected (rapid login failures)  
+- IP analyzed using VirusTotal and AbuseIPDB  
 
-* Multiple failed login attempts detected
-* Same IP address used repeatedly
-* Successful login after failures
+---
 
-## Threat Intelligence
+## Key Findings
 
-* IP analyzed using VirusTotal and AbuseIPDB
-* No malicious activity detected
-* IP identified as internal/private or trusted
+- Multiple failed login attempts detected  
+- Activity occurred within seconds  
+- IP identified as malicious  
+- Behavior indicates brute force attempt  
 
-## Triage Decision
+---
 
-* Classified as suspicious activity
-* Not confirmed as an attack
+## Actions Taken
 
-## Escalation
+- Alert triaged as medium severity  
+- Incident documented  
+- Evidence preserved  
+- Monitoring recommended  
 
-* Incident escalated to higher-level analysis due to unusual login pattern
-
-## Evidence Collected
-
-* Log file (sample_logs.txt)
-* Command line output (findstr)
-* Screenshots from VirusTotal and AbuseIPDB
-
-## Tools Used
-
-* Command Prompt (findstr)
-* VirusTotal
-* AbuseIPDB
-* GitHub
-
-## Recommendations
-
-* Monitor user login activity
-* Implement account lockout policy
-* Review authentication logs regularly
+---
 
 ## Conclusion
 
-The activity is suspicious but not confirmed as malicious. Continuous monitoring is recommended to ensure system security.
-
+The investigation identified suspicious login activity consistent with brute force behavior. While no confirmed compromise occurred, the activity requires monitoring and possible mitigation.
