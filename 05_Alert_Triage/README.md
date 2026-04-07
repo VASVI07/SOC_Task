@@ -2,27 +2,26 @@
 
 ## Objective
 
-Determine whether an alert is a true threat or a false positive.
+To analyze and prioritize alerts based on severity and impact.
 
-## Alert Details
+## Alert Summary
 
-* Multiple failed login attempts
-* Successful login after failures
-* Same IP address involved
+Failed login attempts were detected using Event ID 4625.
 
-## Triage Decision
+## Analysis
 
-Suspicious
+- Multiple failed login attempts observed  
+- No confirmed successful unauthorized access  
+- Activity appears suspicious but not critical  
 
-## Reasoning
+## Severity
 
-* Repeated failed logins indicate possible attack
-* Success after failures raises concern
-* Internal IP suggests possible insider activity or misconfiguration
+Medium
 
-## Next Steps
+## Decision
 
-* Monitor user activity
-* Verify user identity
-* Check system logs for further anomalies
+Alert requires monitoring but does not need immediate escalation.
 
+## Screenshot
+
+<img width="1257" height="948" alt="Screenshot 2026-04-07 210558" src="https://github.com/user-attachments/assets/f50661c7-cac7-4e81-9fc1-743037d9c238" />
