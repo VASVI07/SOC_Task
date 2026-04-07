@@ -26,15 +26,13 @@ Identify whether activity is normal or suspicious.
 
 User: admin | IP: 192.168.1.10 | Status: Failed Login
 
-User: admin | IP: 192.168.1.10 | S<img width="1115" height="1321" alt="Screenshot 2026-04-07 204755" src="https://github.com/user-attachments/assets/bb8900c9-08d4-4f46-9412-732c35f1bf8b" />
-tatus: Failed Login
+User: admin | IP: 192.168.1.10 |status: Failed Login
 
 User: admin | IP: 192.168.1.10 | Status: Success
 
 ### Analysis
 
-* Multiple failed<img width="1115" height="1321" alt="Screenshot 2026-04-07 204755" src="https://github.com/user-attachments/assets/924ac16b-5b51-4d4f-8730-2508a179b3f1" />
- login attempts detected
+* Multiple failed login attempts detected
 * Same IP address used repeatedly
 * Successful login after failures
 
@@ -50,7 +48,8 @@ This may indicate a brute force attack attempt.
 
 ### Command Used
 
-findstr "Failed" sample_logs.txt
+findstr "Failed" sa<img width="1115" height="1321" alt="Screenshot 2026-04-07 204755" src="https://github.com/user-attachments/assets/dfbc6a58-1bb2-4303-8d85-c9a7b5d64cc3" />
+mple_logs.txt
 
 ### Result
 
