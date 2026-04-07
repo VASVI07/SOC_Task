@@ -26,7 +26,8 @@ Identify whether activity is normal or suspicious.
 
 User: admin | IP: 192.168.1.10 | Status: Failed Login
 
-User: admin | IP: 192.168.1.10 | Status: Failed Login
+User: admin | IP: 192.168.1.10 | S<img width="1115" height="1321" alt="Screenshot 2026-04-07 204755" src="https://github.com/user-attachments/assets/bb8900c9-08d4-4f46-9412-732c35f1bf8b" />
+tatus: Failed Login
 
 User: admin | IP: 192.168.1.10 | Status: Success
 
