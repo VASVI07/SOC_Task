@@ -48,8 +48,9 @@ This may indicate a brute force attack attempt.
 
 ### Command Used
 
-findstr "Failed" sa<img width="1115" height="1321" alt="Screenshot 2026-04-07 204755" src="https://github.com/user-attachments/assets/dfbc6a58-1bb2-4303-8d85-c9a7b5d64cc3" />
-mple_logs.txt
+findstr "Failed" sample_logs.txt
+<img width="1115" height="1321" alt="Screenshot 2026-04-07 204755" src="https://github.com/user-attachments/assets/dfbc6a58-1bb2-4303-8d85-c9a7b5d64cc3" />
+
 
 ### Result
 
