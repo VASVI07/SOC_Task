@@ -2,21 +2,23 @@
 
 ## Objective
 
-Collect and preserve evidence related to security incidents.
+To securely store and document evidence collected during analysis.
 
-## Evidence Collected
+## Evidence Details
 
-* Login attempt logs
-* IP address information
-* Analysis findings
+- Log file containing failed login attempts (Event ID 4625)
+- Exported from Windows Event Viewer
 
 ## Preservation Steps
 
-* Save logs securely
-* Take screenshots of findings
-* Maintain integrity of data
+- Logs exported without modification  
+- Stored in a secure location  
+- Documented for investigation  
 
 ## Importance
 
-Ensures that evidence can be used for further investigation and reporting.
+Proper evidence handling ensures data integrity and supports further investigation.
 
+## Screenshots
+
+<img width="1255" height="956" alt="Screenshot 2026-04-07 210926" src="https://github.com/user-attachments/assets/4689b912-ff41-4453-82e9-fbf219fc008d" />
