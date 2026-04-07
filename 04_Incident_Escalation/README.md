@@ -2,24 +2,26 @@
 
 ## Objective
 
-Decide when to escalate a security incident to higher-level analysts.
+To escalate identified suspicious activity for further investigation.
 
-## Incident Details
+## Incident Summary
 
-* Multiple failed login attempts observed
-* Successful login after repeated failures
-* Same IP address used
+Multiple failed login attempts were detected using Event ID 4625.
 
-## Severity Level
+## Severity
 
 Medium
 
-## Reason for Escalation
-
-* Possible brute force attack
-* Suspicious login pattern detected
-
 ## Action Taken
 
-Escalated to senior security team for further investigation.
+- Logs were analyzed using command line tools  
+- Suspicious activity documented  
+- Incident report created  
 
+## Recommendation
+
+Monitor system for repeated login attempts and apply security controls if required.
+
+## Screenshot
+
+<img width="1248" height="955" alt="Screenshot 2026-04-07 210333" src="https://github.com/user-attachments/assets/d95a453f-f64e-4c3c-a3d8-74ea263eb2ee" />
