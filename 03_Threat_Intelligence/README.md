@@ -63,4 +63,3 @@ This IP is safe and represents normal network activity.
 
 ### AbuseIPDB Result
 
-![AbuseIPDB](../08_Screenshots/threat_abuse.png)
