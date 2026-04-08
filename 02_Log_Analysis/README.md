@@ -1,8 +1,7 @@
 # Log Analysis
 
 ## Objective
-
-Analyze logs to identify suspicious or malicious activity.
+The objective of this task is to analyze system and authentication logs in order to identify suspicious or malicious activities, such as unauthorized access attempts, abnormal login behavior, and unusual patterns.
 
 ## What I Will Do
 
@@ -20,45 +19,130 @@ Analyze logs to identify suspicious or malicious activity.
 
 Identify whether activity is normal or suspicious.
 
-## Sample Log Analysis
+Methodology
+1. Review Login Attempts
+  Examined authentication logs containing:
+      Username
+      Timestamp
+      IP address
+      Login status (Success/Failure)
+  Focused on identifying:
+      Frequency of login attempts
+      Time distribution (day/night activity)
+      Repeated attempts by same user/IP
 
-### Logs Observed
+2. Identify Failed Logins
+   Extracted all failed login attempts
+   Key observations:
+      Multiple failed attempts for specific accounts
+      Repeated failures from same IP addresses
+  This may indicate:
+      Brute-force attacks
+      Credential guessing attempts
 
-User: admin | IP: 192.168.1.10 | Status: Failed Login
+3. Analyze IP Addresses
+    Reviewed source IP addresses for:
+      Geographic location (if available)
+      Known vs unknown IPs
+  Identified:
+      IPs not previously associated with users
+      IPs making multiple login attempts in short time
 
-User: admin | IP: 192.168.1.10 |status: Failed Login
+4. Detect Suspicious Patterns
+    Patterns analyzed include:
+      Multiple failed logins followed by a success (possible compromise)
+      Logins from different locations within short time (impossible travel)
+      High frequency of login attempts in seconds/minutes
+      Access attempts during unusual hours (late night/early morning)
 
-User: admin | IP: 192.168.1.10 | Status: Success
+  Tools Used (Conceptual)
+      SIEM Tools (e.g., Splunk)
+      Used for:
+        Log aggregation
+        Search queries
+        Pattern detection
+        
+      Example query (conceptual):
+          index=auth_logs status=failed
+          | stats count by user, ip
+          | where count > 5
+
+  Log Files
+    Types analyzed:
+        Authentication logs
+        System logs
+        Application logs
+      
+## Sample Log Data (Example)
+
+| Timestamp        | Username | IP Address    | Status  |
+| ---------------- | -------- | ------------- | ------- |
+| 2026-04-08 09:01 | user1    | 192.168.1.10  | Success |
+| 2026-04-08 09:05 | user2    | 203.0.113.45  | Failed  |
+| 2026-04-08 09:06 | user2    | 203.0.113.45  | Failed  |
+| 2026-04-08 09:07 | user2    | 203.0.113.45  | Success |
+| 2026-04-08 02:30 | admin    | 198.51.100.22 | Success |
+
+Findings
+1. Multiple Failed Login Attempts
+    User: user2
+    IP: 203.0.113.45
+    Behavior:
+        Repeated failed attempts followed by success
+    Suspicion: Possible brute-force attack
+
+2. Unusual Login Time
+    User: admin
+    Time: 02:30 AM
+    Suspicion: Login outside normal working hours
+
+3. Unknown IP Address Activity
+    IP: 198.51.100.22
+    Not recognized in normal access patterns
+    Suspicion: Unauthorized access attempt
+
+4. Rapid Login Attempts
+      Multiple login attempts within seconds
+      Indicates automated attack (bot/script)
 
 ### Analysis
+  Based on the observations:
 
-* Multiple failed login attempts detected
-* Same IP address used repeatedly
-* Successful login after failures
+| Activity Type          | Risk Level | Explanation                       |
+| ---------------------- | ---------- | --------------------------------- |
+| Repeated failed logins | High       | Brute-force attempt likely        |
+| Unknown IP access      | Medium     | Needs verification                |
+| Odd login timing       | Medium     | Could be legitimate or suspicious |
+| Normal login patterns  | Low        | Regular user activity             |
+
 
 ### Conclusion
-This may indicate a brute force attack attempt.
-Further investigation is recommended to confirm malicious activity.
+The log analysis indicates potential suspicious activity, including:
+
+Brute-force login attempts
+Access from unknown IP addresses
+Login attempts during unusual hours
+
+While some activities may be legitimate, the presence of these patterns suggests a moderate to high security risk.
+
+Recommendations
+
+To improve security:
+
+    Enable multi-factor authentication (MFA)
+    Implement account lockout policies after failed attempts
+    Monitor logs continuously using SIEM tools
+    Restrict access from unknown or foreign IP addresses
+    Set alerts for:
+      Multiple failed login attempts
+      Logins at unusual hours
 
 
-This may indicate a brute force attack attempt.
 
-## Command Line Analysis
+### Outcome
 
-
-### Command Used
-
-findstr "Failed" sample_logs.txt
-<img width="1115" height="1321" alt="Screenshot 2026-04-07 204755" src="https://github.com/user-attachments/assets/dfbc6a58-1bb2-4303-8d85-c9a7b5d64cc3" />
-
-
-### Result
-
-Filtered failed login attempts from log file.
-
-### Conclusion
-
-Multiple failed login attempts detected, indicating possible suspicious activity.
+After analyzing the logs:
+Some activities were normal, but several patterns were identified as suspicious and potentially malicious, requiring further investigation and preventive measures.
 
 ## Real Log Analysis (Practical Work)
 
